@@ -10,12 +10,7 @@ Make them happen!
 
 🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉
 
-💡💡  +  +  API with ObjectionJS + 
-
-
-
-
-
+💡Node + GraphQL + Apollo-Server API with ObjectionJS + KnexJS
 
 ### Breakdown of Project
 
@@ -24,6 +19,7 @@ Make them happen!
 - GraphQL
 - Apollo-Server
 - ObjectionJS
+- KnexJS
 
 ### Minor Packages used:
 - Objection-GraphQL
