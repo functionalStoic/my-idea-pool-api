@@ -1,5 +1,17 @@
 const { ApolloServer, gql } = require('apollo-server');
 
+import knexConfig from './knexfile';
+import Knex from 'knex';
+import { Model } from 'objection';
+
+// Initialize knex.
+const knex = Knex(knexConfig.development);
+
+// Bind all Models to a knex instance. If you only have one database in
+// your server this is all you have to do. For multi database systems, see
+// the Model.bindKnex method.
+Model.knex(knex);
+
 // This is a (sample) collection of books we'll be able to query
 // the GraphQL server for.  A more complete example might fetch
 // from an existing data source like a REST API or database.
