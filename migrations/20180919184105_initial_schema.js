@@ -1,16 +1,16 @@
 exports.up = ({ schema }) =>
     schema
         .createTable('users', table => {
-            table.increments('id').primary();
+            table.increments().primary();
             table.string('email').unique();
             table.string('name');
             table.string('password');
+            table.string('refresh_token');
         })
         .createTable('ideas', table => {
-            table.increments('id').primary();
+            table.increments().primary();
             table
-                .integer('userId')
-                .unsigned()
+                .integer('user_id')
                 .references('id')
                 .inTable('users')
                 .onDelete('SET NULL');
@@ -18,22 +18,6 @@ exports.up = ({ schema }) =>
             table.integer('impact');
             table.integer('confidence');
             table.integer('ease');
-            table.float('average_score');
-        })
-        .createTable('tokens', table => {
-            table.increments('id').primary();
-            table
-                .integer('userId')
-                .unsigned()
-                .references('id')
-                .inTable('users')
-                .onDelete('SET NULL');
-            table.uuid('uuid');
-            table.string('token');
         });
 
-exports.down = ({ schema }) =>
-    schema
-        .dropTable('users')
-        .dropTable('ideas')
-        .dropTable('tokens');
+exports.down = ({ schema }) => schema.dropTable('ideas').dropTable('users');

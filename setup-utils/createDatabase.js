@@ -8,4 +8,4 @@ const knex = require('knex')({
     }
 });
 
-knex.raw('CREATE DATABASE shipcertain').then(() => knex.destroy());
+knex.raw('CREATE DATABASE my_idea_pool_development').then(() => knex.destroy());
