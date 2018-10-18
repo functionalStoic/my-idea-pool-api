@@ -5,15 +5,44 @@
   "license": "MIT",
   "dependencies": {
     "apollo-server": "^2.0.7",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
+    "eslint": "^5.6.1",
+    "express": "^4.16.3",
+    "express-promise-router": "^3.0.3",
     "graphql": "^14.0.2",
+    "jsonwebtoken": "^8.3.0",
     "knex": "^0.15.2",
+    "morgan": "^1.9.1",
     "objection": "^1.2.6",
-    "pg": "^7.4.3"
+    "objection-password": "^2.0.0",
+    "pg": "^7.4.3",
+    "uuid": "^3.3.2"
   },
   "scripts": {
-    "start": "nodemon index.js"
+    "migrate": "knex migrate:latest",
+    "build": "babel src -d build",
+    "start": "yarn migrate && babel-watch src"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
+      "stage-1"
+    ]
   },
   "devDependencies": {
-    "nodemon": "^1.18.4"
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "babel-watch": "^2.0.7",
+    "eslint-plugin-babel": "^5.2.1"
   }
 }
