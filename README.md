@@ -14,7 +14,8 @@ Make them happen!
 
 ### Breakdown of Project
 
-### Main Packages used: 
+### Main Packages used:
+
 - Node
 - GraphQL
 - Apollo-Server
@@ -22,5 +23,6 @@ Make them happen!
 - KnexJS
 
 ### Minor Packages used:
+
 - Objection-GraphQL
 - Ramda
